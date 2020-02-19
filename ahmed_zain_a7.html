@@ -1,0 +1,120 @@
+<!DOCTYPE HTML> 
+<html lang="en"> 
+<head> 
+    <meta charset="utf-8">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="a7_styles.css"> 
+</head>
+    
+<header>Currency Converter</header>
+    
+<body> 
+    
+    <form id="frmCurrencyConverter">
+        
+        <label>Amount in US Dollars</label>
+        <input type="text" id="txtDollarAmount" size="10">
+        
+        <br><br> 
+
+        <label>Convert to</label>
+
+        <select id="selConvertCurrency"> 
+            <option value="euro">European Euros</option>
+            <option value="canDollars">Canadian Dollars</option>
+            <option value="chnYen">Chinese Yen</option>
+            <option value="pkRupees">Pakistani Rupees</option>
+            <option value="indRupees">Indian Rupees</option>
+        </select>
+        
+        <br><br> 
+
+        <input type="button" value="Convert" onclick="convertAmount();"> 
+     </form>
+    
+    <!--**** Output Div ****-->
+    <div id="outputDiv"></div>
+    <div id="outputImageDiv"></div>
+    
+    <script> 
+    
+        function convertAmount() 
+        {
+            var userChoice, dollarAmount, calculatedAmount; 
+            var outputSentence, outputImage; 
+            
+            // Gather values from HTML form
+            userChoice = document.getElementById("selConvertCurrency").value; 
+            
+            dollarAmount = document.getElementById("txtDollarAmount").value; 
+            dollarAmount = parseFloat(dollarAmount); 
+            
+            // Conversions  
+            if (userChoice == "euro")
+            { 
+                // One US Dollar is 0.90 Euros
+                calculatedAmount = dollarAmount * 0.9; 
+                
+                outputSentence = "<span style='color:#0087FF;'>US Dollars: " + dollarAmount + "<br>" + "European Euros: " + calculatedAmount.toFixed(2) + "</span>"; 
+                
+                outputImage = "<img alt='European Union Flag' src='european_union.png'>" 
+                
+                document.getElementById("outputDiv").innerHTML = outputSentence; 
+                document.getElementById("outputImageDiv").innerHTML = outputImage; 
+            }
+            
+            if (userChoice == "canDollars")
+            {
+                // One US Dollar is 1.31 Canadian Dollars
+                calculatedAmount = dollarAmount * 1.31; 
+                
+                outputSentence = "<span style='color:#FF0000;'>US Dollars: " + dollarAmount + "<br>" + "Canadian Dollars: " + calculatedAmount.toFixed(2) + "</span>"; 
+                
+                outputImage = "<img alt='Canadian Flag' src='canada.png'>" 
+                
+                document.getElementById("outputDiv").innerHTML = outputSentence; 
+                document.getElementById("outputImageDiv").innerHTML = outputImage; 
+            }
+            
+            if (userChoice == "chnYen")
+            {
+                // One US Dollar is 7.07 Yen
+                calculatedAmount = dollarAmount * 7.07; 
+                
+                outputSentence = "<span style='color:#FFCC39;'>US Dollars: " + dollarAmount + "<br>" + "Chinese Yen: " + calculatedAmount.toFixed(2) + "</span>"; 
+                
+                outputImage = "<img alt='Chinese Flag' src='china.png'>" 
+                
+                document.getElementById("outputDiv").innerHTML = outputSentence; 
+                document.getElementById("outputImageDiv").innerHTML = outputImage;  
+            }
+            
+            if (userChoice == "pkRupees")
+            { 
+                // One US Dollar is 154.92 Pakistani Rupees
+                calculatedAmount = dollarAmount * 154.92; 
+                
+                outputSentence = "<span style='color:#338300;'>US Dollars: " + dollarAmount + "<br>" + "Pakistani Rupee: " + calculatedAmount.toFixed(2) + "</span>"; 
+                
+                outputImage = "<img alt='Pakistani Flag' src='pakistan.png'>" 
+                
+                document.getElementById("outputDiv").innerHTML = outputSentence; 
+                document.getElementById("outputImageDiv").innerHTML = outputImage;  
+            }
+            
+            if (userChoice == "indRupees")
+            {
+                // One US Dollar is 70.69 Indian Rupees
+                calculatedAmount = dollarAmount * 70.69; 
+                
+                outputSentence = "<span style='color:#FFAE17;'>US Dollars: " + dollarAmount + "<br>" + "Indian Rupee: " + calculatedAmount.toFixed(2) + "</span>"; 
+                
+                outputImage = "<img alt='Indian Flag' src='India.png'>" 
+                
+                document.getElementById("outputDiv").innerHTML = outputSentence; 
+                document.getElementById("outputImageDiv").innerHTML = outputImage;
+            } 
+        }
+    </script>  
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* Styles for Currency Converter */ 
+
+body {
+    background: #000000; 
+    color: #ffffff; 
+}
+
+header {
+    text-align: center; 
+    font-size: 60px; 
+    padding-bottom: 30px; 
+    padding-top: 10px; 
+    font-style: italic; 
+}
+
+
+#frmCurrencyConverter {
+    border: solid 5px #ffffff; 
+    border-style: double; 
+    text-align: center; 
+    margin-left: 10%;
+    margin-right: 10%; 
+    padding-bottom: 10px; 
+    padding-top: 10px; 
+    font-size: 25px; 
+}
+
+input {
+     font-size: 25px; 
+}
+
+#outputDiv {
+    text-align: center; 
+    font-size: 35px;
+    padding-top: 50px; 
+    
+}
+
+#outputImageDiv {
+    text-align: center; 
+    padding: 30px 40px;
+}
+
+img {
+    height: 300px;
+    width: 40%;
+}
+
+select {
+ font-size: 25px; 
+}
